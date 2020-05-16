@@ -30,3 +30,6 @@ out/
 
 ### VS Code ###
 .vscode/
+gradle/
+src/main/resources/static/
+src/main/resources/templates/
