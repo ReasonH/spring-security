@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     @Column(name = "ACCOUNT_USERNAME")
     private String username;
@@ -30,7 +30,7 @@ public class Account {
     private UserRole userRole;//enumtype userRole
 
     @Column(name = "ACCOUNT_SOCIAL_ID")
-    private long socialId;
+    private Long socialId;
 
     @Column(name = "ACCOUNT_SOCIAL_PROFILEPIC")
     private String profileHref;
