@@ -17,17 +17,17 @@ public class Account {
     private Long id;
 
     @Column(name = "ACCOUNT_USERNAME")
-    private String username;
+    private String username = null;
 
     @Column(name = "ACCOUNT_LOGINID")
-    private String userId;
+    private String userId = "reason";
 
     @Column(name = "ACCOUNT_PASSWORD")
-    private String password;
+    private String password = "1234";
 
     @Column(name = "ACCOUNT_ROLE")
     @Enumerated(value = EnumType.STRING) // ordinal 안쓰도록 주의
-    private UserRole userRole;//enumtype userRole
+    private UserRole userRole = UserRole.USER;//enumtype userRole
 
     @Column(name = "ACCOUNT_SOCIAL_ID")
     private Long socialId;

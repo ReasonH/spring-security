@@ -17,8 +17,6 @@ import java.util.NoSuchElementException;
 
 @Component
 public class FormLoginAuthenticationProvider implements AuthenticationProvider {
-    @Autowired
-    private AccountContextService accountContextService;
 
     @Autowired
     private AccountRepository accountRepository;
@@ -50,6 +48,6 @@ public class FormLoginAuthenticationProvider implements AuthenticationProvider {
     }
 
     public boolean isCorrectPassword(String password, Account account){
-        return passwordEncoder.matches(account.getPassword(), password); // 원본이 first parameter
+        return passwordEncoder.matches(password, account.getPassword()); // 원본이 first parameter
     }
 }
