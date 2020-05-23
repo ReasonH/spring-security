@@ -3,7 +3,6 @@ package com.reason.springsec.security.providers;
 import com.reason.springsec.domain.Account;
 import com.reason.springsec.domain.AccountRepository;
 import com.reason.springsec.security.AccountContext;
-import com.reason.springsec.security.AccountContextService;
 import com.reason.springsec.security.tokens.PostAuthorizationToken;
 import com.reason.springsec.security.tokens.PreAuthorizationToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +33,7 @@ public class FormLoginAuthenticationProvider implements AuthenticationProvider {
         Account account = accountRepository.findByUserId(username).orElseThrow(
                 () -> new NoSuchElementException("정보에 맞는 계정이 없습니다.")
         );
+
         if (isCorrectPassword(password, account)){
             return PostAuthorizationToken.getTokenFromAccountContext(AccountContext.fromAccountModel(account));
         }
