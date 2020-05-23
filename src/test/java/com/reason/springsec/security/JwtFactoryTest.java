@@ -1,4 +1,4 @@
-package com.reason.springsec;
+package com.reason.springsec.security;
 
 import com.reason.springsec.domain.Account;
 import com.reason.springsec.domain.UserRole;
