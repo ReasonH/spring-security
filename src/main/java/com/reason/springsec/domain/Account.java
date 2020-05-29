@@ -1,6 +1,7 @@
 package com.reason.springsec.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @Data //getter setter tostring 구현
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,6 +33,10 @@ public class Account {
 
     @Column(name = "ACCOUNT_SOCIAL_ID")
     private Long socialId;
+
+    @Column(name = "ACCOUNT_SOCIAL_PROVIDER")
+    @Enumerated(value = EnumType.STRING)
+    private SocialProviders socialProvider;
 
     @Column(name = "ACCOUNT_SOCIAL_PROFILEPIC")
     private String profileHref;

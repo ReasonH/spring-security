@@ -9,5 +9,4 @@ class SpringsecApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }
